@@ -10,7 +10,7 @@ class Triangle
   end
 
   def illegal
-    allsides.any? { |s| s <= 0 } || (allsides.sort[0] + allsides.sort[1] <= allsides.sort[2])
+    raise TriangleError if allsides.any? { |s| s <= 0 } || (allsides.sort[0] + allsides.sort[1] <= allsides.sort[2])
   end
 
   def kind
